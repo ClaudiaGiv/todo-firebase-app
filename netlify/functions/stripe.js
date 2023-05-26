@@ -27,7 +27,7 @@ exports.handler = async (event, context) => {
         currency: "usd",
         automatic_payment_methods: {enabled: true},
     });
-    console.log("intent", paymentIntent, await paymentIntent.json())
+    console.log("intent", paymentIntent)
     return {
         statusCode: 200, // http status code
         body: JSON.stringify({

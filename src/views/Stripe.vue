@@ -27,7 +27,7 @@ export default {
       },
     };
   },
-  mounted () {
+  created () {
     this.generatePaymentIntent();
     console.log("import.meta.env.VITE_STRIPE_PK")
     console.log(process.env.VUE_APP_STRIPE_PK)
@@ -41,7 +41,7 @@ export default {
         }),
       });
       const { paymentIntent } = await intent.json();
-      console.log(paymentIntent)
+      console.log(paymentIntent,  await intent.json())
       this.elementsOptions.clientSecret = paymentIntent.client_secret;
     },
     pay () {
