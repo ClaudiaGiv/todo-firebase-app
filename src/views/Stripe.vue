@@ -34,14 +34,14 @@ export default {
   },
   methods: {
     async generatePaymentIntent () {
-      const intent = await fetch("/.netlify/functions/stripe", {
+      const intent = await fetch("http://localhost:9999/.netlify/functions/stripe", {
         method: "POST",
         body: JSON.stringify({
           amount: 500,
         }),
       });
-      const { paymentIntent } = await intent.json();
-      console.log(paymentIntent,  await intent.json())
+      const paymentIntent = await intent.json();
+      console.log(paymentIntent)
       this.elementsOptions.clientSecret = paymentIntent.client_secret;
     },
     pay () {
