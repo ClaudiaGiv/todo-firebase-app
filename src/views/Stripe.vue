@@ -18,7 +18,7 @@ export default {
   },
   data () {
     return {
-      pk : import.meta.env.STRIPE_PK,
+      pk : process.env.VUE_APP_STRIPE_PK,
       elementsOptions: {
         appearance: {}, // appearance options
       },
@@ -29,6 +29,8 @@ export default {
   },
   mounted () {
     this.generatePaymentIntent();
+    console.log("import.meta.env.VITE_STRIPE_PK")
+    console.log(process.env.VUE_APP_STRIPE_PK)
   },
   methods: {
     async generatePaymentIntent () {
