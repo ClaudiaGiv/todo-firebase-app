@@ -23,7 +23,7 @@ export default {
         appearance: {}, // appearance options
       },
       confirmParams: {
-        return_url: 'http://localhost:8080/success', // success url
+        return_url: 'https://main--nimble-madeleine-f7ef24.netlify.app/contact', // success url
       },
     };
   },
